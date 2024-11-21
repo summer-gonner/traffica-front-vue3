@@ -121,7 +121,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
           // target: 'https://nest-api.buqiyuan.site',
           target: 'http://127.0.0.1:8888',
           changeOrigin: true,
-          rewrite: (path) => path.replace(/^\/api/, ''),
+          // rewrite: (path) => path.replace(/^\/api/, ''),
         },
         '^/upload': {
           // target: 'https://nest-api.buqiyuan.site/upload',
