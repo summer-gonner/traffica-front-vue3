@@ -99,7 +99,7 @@ export const baseColumns: TableColumnItem[] = [
     width: 120,
     hideInSearch: true,
     customRender: ({ record }) => {
-      return formatToDateTime(record.createTime);
+      return record.createTime===""?"":formatToDateTime(record.createTime);
     },
   },
   {
@@ -108,7 +108,7 @@ export const baseColumns: TableColumnItem[] = [
     width: 120,
     hideInSearch: true,
     customRender: ({ record }) => {
-      return formatToDateTime(record.updateTime);
+      return record.updateTime===""?"":formatToDateTime(record.updateTime);
     },
   },
 ];

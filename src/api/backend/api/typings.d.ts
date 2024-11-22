@@ -1195,13 +1195,13 @@ declare namespace API {
     userName: string;
     password: string;
     psalt: string;
-    nickname: string;
+    nickName: string;
     avatar: string;
     qq: string;
     email: string;
-    phone: string;
+    mobile: string;
     remark: string;
-    status: number;
+    userStatus: number;
     // roles: RoleEntity[];
     // dept: DeptEntity;
     accessTokens: AccessTokenEntity[];
