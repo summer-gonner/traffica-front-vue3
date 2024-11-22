@@ -12,8 +12,8 @@
   import { Tag } from 'ant-design-vue';
   import type { TableColumn } from '@/components/core/dynamic-table';
   import { useTable } from '@/components/core/dynamic-table';
-  import Api from '@/api/';
-  import { formatToDateTime } from '@/utils/dateUtil';
+  import Api from '@/api';
+  import { formatToDateTime } from '@/utils/dateUtil.ts';
 
   defineOptions({
     name: 'SystemMonitorLoginLog',
