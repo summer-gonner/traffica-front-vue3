@@ -13,7 +13,7 @@ export async function deptList(
   params: API.DeptListParams,
   options?: RequestOptions,
 ) {
-  return request<API.DeptEntity[]>('/api/system/depts', {
+  return request<API.DeptEntity[]>('/api/sys/dept/queryDeptList', {
     method: 'GET',
     params: {
       ...params,
@@ -24,7 +24,7 @@ export async function deptList(
 
 /** 创建部门 POST /api/system/depts */
 export async function deptCreate(body: API.DeptDto, options?: RequestOptions) {
-  return request<any>('/api/system/depts', {
+  return request<any>('/api/sys/dept/addDept', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

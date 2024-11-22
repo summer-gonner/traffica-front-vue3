@@ -14,15 +14,15 @@ export async function userList(
   options?: RequestOptions,
 ) {
   return request<{
-    items?: API.UserEntity[];
+    data?: API.UserEntity[];
     meta?: {
       itemCount?: number;
-      totalItems?: number;
-      itemsPerPage?: number;
+      total?: number;
+      pageSize?: number;
       totalPages?: number;
-      currentPage?: number;
+      current?: number;
     };
-  }>('/api/system/users', {
+  }>('/api/sys/user/queryUserList', {
     method: 'GET',
     params: {
       ...params,
@@ -33,7 +33,7 @@ export async function userList(
 
 /** 新增用户 POST /api/system/users */
 export async function userCreate(body: API.UserDto, options?: RequestOptions) {
-  return request<any>('/api/system/users', {
+  return request<any>('/api/sys/user/addUser', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

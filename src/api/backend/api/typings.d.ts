@@ -121,18 +121,18 @@ declare namespace API {
 
   type DeptEntity = {
     /** 创建者 */
-    creator: string;
+    createBy: string;
     /** 更新者 */
     updater: string;
     /** 部门名称 */
-    name: string;
+    deptName: string;
     /** 排序 */
     orderNo: number;
     children: DeptEntity[];
     parent?: DeptEntity;
     id: number;
-    createdAt: string;
-    updatedAt: string;
+    createTime: string;
+    updateTime: string;
   };
 
   type DeptInfoParams = {
@@ -1192,7 +1192,7 @@ declare namespace API {
   };
 
   type UserEntity = {
-    username: string;
+    userName: string;
     password: string;
     psalt: string;
     nickname: string;
@@ -1202,12 +1202,12 @@ declare namespace API {
     phone: string;
     remark: string;
     status: number;
-    roles: RoleEntity[];
-    dept: DeptEntity;
+    // roles: RoleEntity[];
+    // dept: DeptEntity;
     accessTokens: AccessTokenEntity[];
     id: number;
-    createdAt: string;
-    updatedAt: string;
+    createTime: string;
+    updateTime: string;
   };
 
   type UserListParams = {

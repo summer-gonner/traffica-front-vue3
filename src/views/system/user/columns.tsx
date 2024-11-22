@@ -21,38 +21,38 @@ export const baseColumns: TableColumnItem[] = [
   {
     title: '用户名',
     width: 120,
-    dataIndex: 'username',
+    dataIndex: 'userName',
   },
   {
     title: '呢称',
     width: 120,
     hideInSearch: true,
-    dataIndex: 'nickname',
+    dataIndex: 'nickName',
   },
-  {
-    title: '所在部门',
-    dataIndex: 'dept',
-    hideInSearch: true,
-    width: 180,
-    customRender: ({ record }) => {
-      return <Tag>{record.dept?.name}</Tag>;
-    },
-  },
-  {
-    title: '所属角色',
-    dataIndex: 'roleNames',
-    hideInSearch: true,
-    width: 220,
-    customRender: ({ record }) => (
-      <Space>
-        {record.roles.map((item) => (
-          <Tag color={'success'} key={item.id}>
-            {item.name}
-          </Tag>
-        ))}
-      </Space>
-    ),
-  },
+  // {
+  //   title: '所在部门',
+  //   dataIndex: 'dept',
+  //   hideInSearch: true,
+  //   width: 180,
+  //   customRender: ({ record }) => {
+  //     return <Tag>{record.dept?.deptName}</Tag>;
+  //   },
+  // },
+  // {
+  //   title: '所属角色',
+  //   dataIndex: 'roleNames',
+  //   hideInSearch: true,
+  //   width: 220,
+  //   customRender: ({ record }) => (
+  //     <Space>
+  //       {record.roles.map((item) => (
+  //         <Tag color={'success'} key={item.id}>
+  //           {item.name}
+  //         </Tag>
+  //       ))}
+  //     </Space>
+  //   ),
+  // },
   {
     title: '邮箱',
     width: 120,
@@ -61,7 +61,7 @@ export const baseColumns: TableColumnItem[] = [
   {
     title: '手机',
     width: 120,
-    dataIndex: 'phone',
+    dataIndex: 'mobile',
   },
   {
     title: '备注',
@@ -70,7 +70,7 @@ export const baseColumns: TableColumnItem[] = [
   },
   {
     title: '状态',
-    dataIndex: 'status',
+    dataIndex: 'userStatus',
     width: 100,
     hideInSearch: true,
     formItemProps: {
@@ -89,26 +89,26 @@ export const baseColumns: TableColumnItem[] = [
       },
     },
     customRender: ({ record }) => {
-      const isEnable = ~~record.status === 1;
+      const isEnable = ~~record.userStatus === 1;
       return <Tag color={isEnable ? 'success' : 'red'}>{isEnable ? '启用' : '禁用'}</Tag>;
     },
   },
   {
     title: '创建时间',
-    dataIndex: 'createdAt',
+    dataIndex: 'createTime',
     width: 120,
     hideInSearch: true,
     customRender: ({ record }) => {
-      return formatToDateTime(record.createdAt);
+      return formatToDateTime(record.createTime);
     },
   },
   {
     title: '修改时间',
-    dataIndex: 'updatedAt',
+    dataIndex: 'updateTime',
     width: 120,
     hideInSearch: true,
     customRender: ({ record }) => {
-      return formatToDateTime(record.createdAt);
+      return formatToDateTime(record.updateTime);
     },
   },
 ];
