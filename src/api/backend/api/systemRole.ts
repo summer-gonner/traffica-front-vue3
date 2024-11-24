@@ -10,23 +10,19 @@ import { request, type RequestOptions } from '@/utils/request';
 /** 获取角色列表 GET /api/system/roles */
 export async function roleList(
   // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
-  params: API.RoleListParams,
+  body: API.RoleListParams,
   options?: RequestOptions,
 ) {
   return request<{
     items?: API.RoleEntity[];
-    meta?: {
-      itemCount?: number;
-      totalItems?: number;
-      itemsPerPage?: number;
-      totalPages?: number;
-      currentPage?: number;
-    };
-  }>('/api/system/roles', {
-    method: 'GET',
-    params: {
-      ...params,
-    },
+    pageSize?: number;
+    total?: number;
+    itemsPerPage?: number;
+    totalPages?: number;
+    current?: number;
+  }>('/api/sys/role/queryRoleList', {
+    method: 'POST',
+    data:body,
     ...(options || {}),
   });
 }

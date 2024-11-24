@@ -1,4 +1,4 @@
-import { Avatar, Space, Tag } from 'ant-design-vue';
+import { Avatar, Tag } from 'ant-design-vue';
 import type { TableColumn } from '@/components/core/dynamic-table';
 import { formatToDateTime } from '@/utils/dateUtil';
 import { baseApiUrl } from '@/utils/request';

@@ -10,14 +10,12 @@ import { request, type RequestOptions } from '@/utils/request';
 /** 获取所有菜单列表 GET /api/system/menus */
 export async function menuList(
   // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
-  params: API.MenuListParams,
+  body: API.MenuListParams,
   options?: RequestOptions,
 ) {
-  return request<API.MenuItemInfo[]>('/api/system/menus', {
-    method: 'GET',
-    params: {
-      ...params,
-    },
+  return request<API.MenuItemInfo[]>('/api/sys/menu/queryMenuList', {
+    method: 'POST',
+    data: body,
     ...(options || {}),
   });
 }

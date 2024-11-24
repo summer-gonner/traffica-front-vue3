@@ -78,9 +78,9 @@
 
     formRef?.setFieldsValue({
       ...record,
-      icon: record.icon ?? '',
+      icon: record.menuIcon ?? '',
       parentId: record.parentId ?? -1,
-      component: record.component?.split('/'),
+      component: record.vueComponent?.split('/'),
     });
     console.log('record', record);
   };
@@ -112,7 +112,7 @@
             perm: 'system:menu:create',
             effect: 'disable',
           },
-          disabled: record.type === 2 || record.status === 0,
+          disabled: record.menuType === 2 || record.menuStatus === 0,
           onClick: () => openMenuModal({ parentId: record.id }),
         },
         {

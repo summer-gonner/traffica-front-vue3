@@ -7,20 +7,22 @@ export type TableColumnItem = TableColumn<TableListItem>;
 export const baseColumns: TableColumnItem[] = [
   {
     title: '部门名称',
-    dataIndex: 'name',
+    dataIndex: 'deptName',
     align: 'left',
   },
   {
     title: '排序',
-    dataIndex: 'orderNo',
+    dataIndex: 'deptSort',
     width: 50,
     hideInSearch: true,
   },
   {
     title: '创建时间',
-    dataIndex: 'createdAt',
+    dataIndex: 'createTime',
     width: 200,
     hideInSearch: true,
-    customRender: ({ record }) => formatToDateTime(record.createdAt),
+    customRender({ text }) {
+      return text.createTime===""?"":formatToDateTime(text.createTime);
+    },
   },
 ];

@@ -9,7 +9,7 @@ import { request, type RequestOptions } from '@/utils/request';
 
 /** 账户登出 GET /api/account/logout */
 export async function accountLogout(options?: RequestOptions) {
-  return request<any>('/api/sys/user/menus', {
+  return request<any>('/api/sys/user/logout', {
     method: 'GET',
     ...(options || {}),
   });

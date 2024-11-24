@@ -15,16 +15,16 @@ export const baseColumns: TableColumnItem[] = [
   {
     title: '角色名称',
     width: 200,
-    dataIndex: 'name',
+    dataIndex: 'roleName',
   },
   {
     title: '角色值',
     width: 180,
-    dataIndex: 'value',
+    dataIndex: 'roleKey',
   },
   {
     title: '状态',
-    dataIndex: 'status',
+    dataIndex: 'roleStatus',
     width: 80,
     formItemProps: {
       component: 'Select',
@@ -42,7 +42,7 @@ export const baseColumns: TableColumnItem[] = [
       },
     },
     customRender: ({ record }) => {
-      const enable = ~~record.status === 1;
+      const enable = ~~record.roleStatus === 1;
       return <Tag color={enable ? 'green' : 'red'}>{enable ? '启用' : '停用'}</Tag>;
     },
   },
@@ -52,18 +52,18 @@ export const baseColumns: TableColumnItem[] = [
   },
   {
     title: '创建时间',
-    dataIndex: 'createdAt',
+    dataIndex: 'createTime',
     hideInSearch: true,
     customRender: ({ record }) => {
-      return formatToDateTime(record.createdAt);
+      return record.createTime===""?"":formatToDateTime(record.createTime);
     },
   },
   {
     title: '更新时间',
-    dataIndex: 'updatedAt',
+    dataIndex: 'updateTime',
     hideInSearch: true,
     customRender: ({ record }) => {
-      return formatToDateTime(record.createdAt);
+      return record.updateTime===""?"":formatToDateTime(record.updateTime);
     },
   },
 ];

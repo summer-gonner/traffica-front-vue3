@@ -123,11 +123,11 @@ declare namespace API {
     /** 创建者 */
     createBy: string;
     /** 更新者 */
-    updater: string;
+    updateBy: string;
     /** 部门名称 */
     deptName: string;
     /** 排序 */
-    orderNo: number;
+    deptSort: number;
     children: DeptEntity[];
     parent?: DeptEntity;
     id: number;
@@ -468,28 +468,28 @@ declare namespace API {
 
   type MenuItemInfo = {
     /** 创建者 */
-    creator: string;
+    createBy: string;
     /** 更新者 */
-    updater: string;
+    updateBy: string;
     children: MenuItemInfo[];
     parentId: number;
-    name: string;
-    path: string;
-    permission: string;
-    type: number;
-    icon: string;
-    orderNo: number;
-    component: string;
+    menuName: string;
+    menuPath: string;
+    menuPerms: string;
+    menuType: number;
+    menuIcon: string;
+    menuSort: number;
+    vueComponent: string;
     isExt: boolean;
     extOpenMode: number;
     keepAlive: number;
-    show: number;
+    isVisible: number;
     activeMenu: string;
-    status: number;
+    menuStatus: number;
     roles: RoleEntity[];
     id: number;
-    createdAt: string;
-    updatedAt: string;
+    createTime: string;
+    updateTime: string;
   };
 
   type MenuListParams = {
@@ -756,22 +756,22 @@ declare namespace API {
 
   type RoleEntity = {
     /** 创建者 */
-    creator: string;
+    createBy: string;
     /** 更新者 */
-    updater: string;
+    updateBy: string;
     /** 角色名 */
-    name: string;
+    roleName: string;
     /** 角色标识 */
-    value: string;
+    roleKey: string;
     /** 角色描述 */
     remark: string;
     /** 状态：1启用，0禁用 */
-    status: number;
+    roleStatus: number;
     /** 是否默认用户 */
     default: boolean;
     id: number;
-    createdAt: string;
-    updatedAt: string;
+    createTime: string;
+    updateTime: string;
   };
 
   type RoleInfo = {

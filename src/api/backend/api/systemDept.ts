@@ -7,17 +7,15 @@
 
 import { request, type RequestOptions } from '@/utils/request';
 
-/** 获取部门列表 GET /api/system/depts */
+/** 获取部门列表 POST /api/system/depts */
 export async function deptList(
   // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
-  params: API.DeptListParams,
+  body: API.DeptListParams,
   options?: RequestOptions,
 ) {
   return request<API.DeptEntity[]>('/api/sys/dept/queryDeptList', {
-    method: 'GET',
-    params: {
-      ...params,
-    },
+    method: 'POST',
+    data:body,
     ...(options || {}),
   });
 }

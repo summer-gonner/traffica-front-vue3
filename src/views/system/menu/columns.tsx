@@ -16,7 +16,7 @@ const getMenuType = (type) => {
     case 1:
       return <Tag color="success">菜单</Tag>;
     case 2:
-      return <Tag color="error">权限</Tag>;
+      return <Tag color="error">按钮</Tag>;
     default:
       return '';
   }
@@ -25,7 +25,7 @@ const getMenuType = (type) => {
 export const baseColumns: TableColumnItem[] = [
   {
     title: '名称',
-    dataIndex: 'name',
+    dataIndex: 'menuName',
     align: 'left',
     fixed: 'left',
     width: 200,
@@ -33,27 +33,27 @@ export const baseColumns: TableColumnItem[] = [
   {
     title: '图标',
     width: 40,
-    dataIndex: 'icon',
+    dataIndex: 'menuIcon',
     hideInSearch: true,
-    customRender: ({ record }) => record.icon && <Icon icon={record.icon} size="22" />,
+    customRender: ({ record }) => record.menuIcon && <Icon icon={record.menuIcon} size="22" />,
   },
   {
     title: '类型',
     width: 80,
-    dataIndex: 'type',
+    dataIndex: 'menuType',
     hideInSearch: true,
-    customRender: ({ record }) => getMenuType(record.type),
+    customRender: ({ record }) => getMenuType(record.menuType),
   },
   {
     title: '节点路由',
-    dataIndex: 'path',
+    dataIndex: 'menuPath',
     width: 180,
     ellipsis: true,
   },
   {
     title: '文件路径',
     width: 180,
-    dataIndex: 'component',
+    dataIndex: 'vueComponent',
   },
   {
     title: '权限标识',
@@ -61,12 +61,12 @@ export const baseColumns: TableColumnItem[] = [
     dataIndex: 'permission',
     hideInSearch: true,
     customRender: ({ record }) =>
-      record.permission && <Tag color="processing">{record.permission}</Tag>,
+      record.menuPerms && <Tag color="processing">{record.menuPerms}</Tag>,
   },
   {
     title: '排序',
     width: 50,
-    dataIndex: 'orderNo',
+    dataIndex: 'menuSort',
     hideInSearch: true,
   },
   {
@@ -74,15 +74,15 @@ export const baseColumns: TableColumnItem[] = [
     dataIndex: 'keepalive',
     width: 80,
     hideInSearch: true,
-    customRender: ({ record }) => record.type === 1 && (record.keepAlive ? '是' : '否'),
+    customRender: ({ record }) => record.menuStatus === 1 && (record.keepAlive ? '是' : '否'),
   },
   {
     title: '是否显示',
-    dataIndex: 'show',
+    dataIndex: 'isVisible',
     width: 80,
     hideInSearch: true,
     customRender: ({ record }) => {
-      const show = record.show;
+      const show = record.isVisible;
       const enable = ~~show === 1;
       const color = enable ? 'green' : 'red';
       const text = enable ? '显示' : '隐藏';
@@ -91,11 +91,11 @@ export const baseColumns: TableColumnItem[] = [
   },
   {
     title: '状态',
-    dataIndex: 'status',
+    dataIndex: 'menuStatus',
     width: 80,
     hideInSearch: true,
     customRender: ({ record }) => {
-      const status = record.status;
+      const status = record.menuStatus;
       const enable = ~~status === 1;
       const color = enable ? 'green' : 'red';
       const text = enable ? '启用' : '停用';
@@ -105,10 +105,10 @@ export const baseColumns: TableColumnItem[] = [
   {
     title: '更新时间',
     width: 180,
-    dataIndex: 'updatedAt',
+    dataIndex: 'updateTime',
     hideInSearch: true,
     customRender({ text }) {
-      return formatToDateTime(text);
+      return text.updateTime===""?"":formatToDateTime(text.updateTime);
     },
   },
 ];
