@@ -49,7 +49,7 @@ export async function userRead(
     options?: RequestOptions,
 ) {
     const {id: param0, ...queryParams} = params;
-    return request<API.UserEntity>(`/api/system/users/${param0}`, {
+    return request<API.UserEntity>(`/api/sys/user/queryUserDetail?id=${param0}`, {
         method: 'GET',
         params: {...queryParams},
         ...(options || {}),
@@ -64,8 +64,8 @@ export async function userUpdate(
     options?: RequestOptions,
 ) {
     const {id: param0, ...queryParams} = params;
-    return request<any>(`/api/system/users/${param0}`, {
-        method: 'PUT',
+    return request<any>(`/api/sys/user/updateUser/${param0}`, {
+        method: 'Post',
         headers: {
             'Content-Type': 'application/json',
         },

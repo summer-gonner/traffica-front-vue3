@@ -1182,7 +1182,7 @@ declare namespace API {
     /** 邮箱 */
     email: string;
     /** 手机号 */
-    phone?: string;
+    mobile?: string;
     /** QQ */
     qq?: string;
     /** 备注 */
@@ -1192,16 +1192,16 @@ declare namespace API {
   };
 
   type UserEntity = {
-    userName: string;
+    username: string;
     password: string;
-    psalt: string;
-    nickName: string;
+    salt: string;
+    nickname: string;
     avatar: string;
     qq: string;
     email: string;
     mobile: string;
     remark: string;
-    userStatus: number;
+    status: number;
     // roles: RoleEntity[];
     // dept: DeptEntity;
     accessTokens: AccessTokenEntity[];

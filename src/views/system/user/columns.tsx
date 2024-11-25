@@ -21,13 +21,13 @@ export const baseColumns: TableColumnItem[] = [
   {
     title: '用户名',
     width: 120,
-    dataIndex: 'userName',
+    dataIndex: 'username',
   },
   {
     title: '呢称',
     width: 120,
     hideInSearch: true,
-    dataIndex: 'nickName',
+    dataIndex: 'nickname',
   },
   // {
   //   title: '所在部门',
@@ -70,7 +70,7 @@ export const baseColumns: TableColumnItem[] = [
   },
   {
     title: '状态',
-    dataIndex: 'userStatus',
+    dataIndex: 'status',
     width: 100,
     hideInSearch: true,
     formItemProps: {
@@ -89,7 +89,7 @@ export const baseColumns: TableColumnItem[] = [
       },
     },
     customRender: ({ record }) => {
-      const isEnable = ~~record.userStatus === 1;
+      const isEnable = ~~record.status === 1;
       return <Tag color={isEnable ? 'success' : 'red'}>{isEnable ? '启用' : '禁用'}</Tag>;
     },
   },

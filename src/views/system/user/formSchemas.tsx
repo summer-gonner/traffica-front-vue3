@@ -1,6 +1,6 @@
 import AvatarUpload from './AvatarUpload.vue';
 import type { FormSchema } from '@/components/core/schema-form/';
-import Api from '@/api/';
+
 
 export const userSchemas: FormSchema<API.UserDto>[] = [
   {
@@ -8,32 +8,32 @@ export const userSchemas: FormSchema<API.UserDto>[] = [
     component: () => AvatarUpload,
     label: '头像',
   },
-  {
-    field: 'deptId',
-    component: 'TreeSelect',
-    label: '所属部门',
-    componentProps: {
-      fieldNames: {
-        label: 'name',
-        value: 'id',
-      },
-      getPopupContainer: () => document.body,
-    },
-    rules: [{ required: true, type: 'number' }],
-  },
-  {
-    field: 'roleIds',
-    component: 'Select',
-    label: '所属角色',
-    rules: [{ required: true, type: 'array' }],
-    componentProps: {
-      mode: 'multiple',
-      request: async () => {
-        const { items = [] } = await Api.systemRole.roleList({});
-        return items.map((n) => ({ label: n.name, value: n.id }));
-      },
-    },
-  },
+  // {
+  //   field: 'deptId',
+  //   component: 'TreeSelect',
+  //   label: '所属部门',
+  //   componentProps: {
+  //     fieldNames: {
+  //       label: 'name',
+  //       value: 'id',
+  //     },
+  //     getPopupContainer: () => document.body,
+  //   },
+  //   rules: [{ required: true, type: 'number' }],
+  // },
+  // {
+  //   field: 'roleIds',
+  //   component: 'Select',
+  //   label: '所属角色',
+  //   rules: [{ required: true, type: 'array' }],
+  //   componentProps: {
+  //     mode: 'multiple',
+  //     request: async () => {
+  //       const { items = [] } = await Api.systemRole.roleList({});
+  //       return items.map((n) => ({ label: n.name, value: n.id }));
+  //     },
+  //   },
+  // },
   {
     field: 'username',
     component: 'Input',
@@ -65,7 +65,7 @@ export const userSchemas: FormSchema<API.UserDto>[] = [
     },
   },
   {
-    field: 'phone',
+    field: 'mobile',
     component: 'Input',
     label: '手机',
     colProps: {
